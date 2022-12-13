@@ -2,6 +2,24 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
 
+## Code Structure
+
+- /app: redux actions and reducers
+- /components: form builders and form fields
+- /types: typescript types
+- /utils: validators
+- form-data.json: json file to config form (not typed, assuming it's coming from server)
+
+## What's Left For Production-Ready?
+
+- More styling (only a small amount of css was done due to time limit)
+- More unit test coverage (only one unit test was written due to time limit)
+- Implement more validation rules
+- Implement data sanitiser for the json file if it is coming from the server
+- Implement more form feild types (check box, radio buttons, etc)
+- Implement a non-native date picker to have unified looks across browser
+- Improve accessibility
+
 ## Available Scripts
 
 In the project directory, you can run:

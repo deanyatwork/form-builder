@@ -1,0 +1,58 @@
+{
+  "title": "Payroll Enquiry",
+  "description": "Please use this form for any Payroll related enquiries",
+  "fields": {
+    "equiryCategory": {
+      "type": "choices",
+      "label": "What does your enquiry relate to?",
+      "options": [
+        "Incorrect Pay",
+        "Missing Expense",
+        "Change of Bank Details",
+        "Chagne of Address",
+        "Other"
+      ],
+      "validations": [
+        {
+          "rule": "required"
+        }
+      ]
+    },
+    "payslipDate": {
+      "type": "date",
+      "label": "Date of payslip being queried (if applicable)",
+      "validations": [
+        {
+          "rule": "required",
+          "preCondition": {
+            "operator": "or",
+            "operands": [
+              {
+                "operator": "eq",
+                "field": "equiryCategory",
+                "value": "Incorrect Pay"
+              },
+              {
+                "operator": "eq",
+                "field": "equiryCategory",
+                "value": "Missing Expense"
+              }
+            ]
+          }
+        },
+        {
+          "rule": "dateformat"
+        }
+      ]
+    },
+    "queryBody": {
+      "type": "text-multi-line",
+      "label": "Query",
+      "validations": [
+        {
+          "rule": "required"
+        }
+      ]
+    }
+  }
+}
